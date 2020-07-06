@@ -1,25 +1,39 @@
-<!DOCTYPE html >
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <title>用例</title>
     <link rel="stylesheet" href="style/style.css" type="text/css">
-<!--    <script type="text/javascript" src="vue.js" charset="utf-8"></script>-->
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script type="text/javascript" src="js/vue.js" charset="utf-8"></script>
 </head>
 
 <body>
 
-<script type="text/javascript">
-    var app = new Vue({
-        el: '#app',
-        data: {
-            message: 'Hello Vue!'
-        }
-    })
-</script>
-<div id="app">
-    {{ message }}
+<div id="app" >
+    {{ message }} {{1+2}}
+    <input type="button" value="button" v-on:click="say"/>
+    <div v-text="message"/>
 </div>
+
+<script type="text/javascript">
+    const app = new Vue({
+        el: "#app",
+        data: {
+            message: 'Hello Vue!',
+            count : 1,
+        },
+        methods: {
+            say: function (event) {
+                if (this.count%2 == 0)
+                    this.message = this.count +'这是偶数'
+                else
+                    this.message = this.count+"这是奇数"
+                this.count++;
+            }
+        }
+    });
+
+</script>
 
 </body>
 
