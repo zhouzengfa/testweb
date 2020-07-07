@@ -12,7 +12,7 @@
 <div id="app" >
     {{ message }} {{1+2}}
     <input type="button" value="button" v-on:click="say"/>
-    <div v-text="message"/>
+    <div v-text="message"></div>
 </div>
 
 <script type="text/javascript">
@@ -24,7 +24,7 @@
         },
         methods: {
             say: function (event) {
-                if (this.count%2 == 0)
+                if (this.count%2 === 0)
                     this.message = this.count +'这是偶数'
                 else
                     this.message = this.count+"这是奇数"
