@@ -1,11 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+
     <title>bootstrap demo1</title>
+    <link href="css/bootstrap.css" type="text/css" rel="stylesheet">
+
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@0.12.4/dist/jquery.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="js/bootstrap.js"></script>
+    <style>
+        #app div{
+            background-color: #8c8c8c;
+            border: #9d9d9d 1px solid;
+            margin-bottom: 1px
+        }
+    </style>
 </head>
 <body>
-<div>test</div>
+<div class="container">
+<form class="form-inline ">
+    <div class="form-group input-group">
+        <div class="input-group-addon">$</div>
+        <label class="sr-only" for="amount">amount</label>
+        <input type="text" placeholder="Amount" id="amount" class="form-control"></input>
+        <div class="input-group-addon">.00</div>
+    </div>
+    <div class="form-group input-group">
+        <label class="input-group-addon" for="t">$$</label>
+        <input type="button" id="t" class="form-control" placeholder="holder" >
+    </div>
+</form>
+
+    <br>
+
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label for="email" class="control-label col-sm-2">email</label>
+            <div class="col-sm-2">
+                <input id="email" class="form-control" type="email" placeholder="email">
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-sm-2 control-label">password</label>
+            <div class="col-sm-2">
+                <input type="password" class="form-control" id="password" placeholder="password">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class=" col-sm-10 col-sm-offset-2">
+                <div class="checkbox">
+                <label>
+                    <input type="checkbox" >Rember me
+                </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-2">
+                <button class="btn btn-default ">Sign in</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </body>
 </html>
