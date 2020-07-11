@@ -23,50 +23,35 @@
 </head>
 <body>
 <div class="container">
-<form class="form-inline ">
-    <div class="form-group input-group">
-        <div class="input-group-addon">$</div>
-        <label class="sr-only" for="amount">amount</label>
-        <input type="text" placeholder="Amount" id="amount" class="form-control"></input>
-        <div class="input-group-addon">.00</div>
+    <div class="checkbox">
+            <input type="checkbox" value="">
+            Option one is this and that&mdash;be sure to include why it's great
     </div>
-    <div class="form-group input-group">
-        <label class="input-group-addon" for="t">$$</label>
-        <input type="button" id="t" class="form-control" placeholder="holder" >
+    <div class="checkbox disabled">
+        <label>
+            <input type="checkbox" value="" disabled>
+            Option two is disabled
+        </label>
     </div>
-</form>
 
-    <br>
-
-    <form class="form-horizontal">
-        <div class="form-group">
-            <label for="email" class="control-label col-sm-2">email</label>
-            <div class="col-sm-2">
-                <input id="email" class="form-control" type="email" placeholder="email">
-            </div>
-
-        </div>
-        <div class="form-group">
-            <label for="password" class="col-sm-2 control-label">password</label>
-            <div class="col-sm-2">
-                <input type="password" class="form-control" id="password" placeholder="password">
-            </div>
-        </div>
-        <div class="form-group">
-            <div class=" col-sm-10 col-sm-offset-2">
-                <div class="checkbox">
-                <label>
-                    <input type="checkbox" >Rember me
-                </label>
-                </div>
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-2">
-                <button class="btn btn-default ">Sign in</button>
-            </div>
-        </div>
-    </form>
+    <div class="radio">
+        <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+            Option one is this and that&mdash;be sure to include why it's great
+        </label>
+    </div>
+    <div class="radio">
+        <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+            Option two can be something else and selecting it will deselect option one
+        </label>
+    </div>
+    <div class="radio disabled">
+        <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
+            Option three is disabled
+        </label>
+    </div>
 </div>
 
 
