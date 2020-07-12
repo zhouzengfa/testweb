@@ -1,0 +1,34 @@
+#main{
+    background-color: #8a6d3b;
+}
+#left{
+    background-color: #afd9ee;
+}
+
+#center{
+    background-color: #ccc;
+}
+
+#right{
+    background-color: aliceblue;
+}
+
+.navbar-brand{
+    background-image: url("../img/logo.png");
+    background-position: center center;
+    width: 50px;
+    background-size: 70% 70%;
+    background-repeat: no-repeat;
+}
+
+.navbar-default .navbar-nav>li>a:hover{
+    background-color: #ccc;
+    color: white;
+    border-radius: 4px;
+}
+
+.navbar-default .navbar-nav>li>a:active{
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 4px;
+ }
