@@ -42,4 +42,5 @@
 .list-group-item.active,
 a.list-group-item:focus{
     background-color: #EA0C3C;
+    color: white;
 }
