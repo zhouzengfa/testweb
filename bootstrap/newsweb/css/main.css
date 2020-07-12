@@ -1,8 +1,8 @@
 #main{
-    background-color: #8a6d3b;
+    /*background-color: #8a6d3b;*/
 }
 #left{
-    background-color: #afd9ee;
+    /*background-color: #afd9ee;*/
 }
 
 #center{
@@ -27,8 +27,19 @@
     border-radius: 4px;
 }
 
-.navbar-default .navbar-nav>li>a:active{
+.navbar-default .navbar-nav>li>a:focus{
     background-color: #4CAF50;
     color: white;
     border-radius: 4px;
  }
+
+.list-group-item{
+    border: 0px;
+    border-radius: 4px;
+    margin-bottom: 1px;
+}
+
+.list-group-item.active,
+a.list-group-item:focus{
+    background-color: #EA0C3C;
+}
