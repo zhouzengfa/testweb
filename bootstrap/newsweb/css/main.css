@@ -6,7 +6,7 @@
 }
 
 #center{
-    background-color: #ccc;
+    /*background-color: #ccc;*/
 }
 
 #right{
@@ -43,4 +43,39 @@
 a.list-group-item:focus{
     background-color: #EA0C3C;
     color: white;
+}
+
+img{
+    width: 100%;
+    border-radius: 3px;
+}
+
+.news-list-item{
+    display: block;
+    padding: 20px 0px;
+    border-bottom: #e5e5e5 1px solid;
+}
+.news-list-item img{
+    max-height: 120px;
+    border-radius: 7px;
+}
+.news-list-item:first-child{
+    padding-top: 0px;
+}
+.avater{
+    width: 16px;
+    height: 16px;
+}
+.title{
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.5em;
+}
+.title:hover,.title:focus{
+    text-decoration: none;
+}
+.info{
+    margin-top: 5px;
+    display: inline-block;
 }
