@@ -27,20 +27,33 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-2 left-column">
-            <div class="list-group">
-                <a class="list-group-item disabled" href="#">bootstrap示例</a>
-                <a class="list-group-item" href="bootstrap/newsweb/index.html" target="inframe">新闻站点</a>
-                <a class="list-group-item" href="#">demo2</a>
+            <div id="left-menu" class="list-group">
+                <a v-for="item in list" v-bind:class="{'list-group-item':true, 'disabled':item.disable}"
+                    :href="item.url" :target="item.target != null ? item.target : 'inframe'">{{item.name}}</a>
+<!--                <a v-for="item in list" v-bind:class="['list-group-item', item.disable ? 'disabled' :'']" :href="item.url" :target="item.disable ?'': 'inframe'">{{item.name}}</a>-->
             </div>
+            <script type="text/javascript">
+                new Vue({
+                    el: '#left-menu',
+                    data: {
+                        list: [
+                            {name: "bootstrap", url: '#', disable: true, target: ''},
+                            {name: "新闻站点", url: 'bootstrap/newsweb/index.html'},
+                            {name: "响应式边栏导航", url:'examples/navbar/navbar1.html', target:'_blank'},
+                            {name: "导航下拉菜单", url:'examples/navbar/navbar2.html'},
+                            {name: "demo1", url:'bootstrap/demo1/index.html'},
+                        ],
+                    }
+                });
+            </script>
         </div>
         <div class="col-xs-10 center-column">
-            <iframe id="inframe" name="inframe" src="" frameborder="0">
+            <iframe name="inframe" src="" frameborder="0" scrolling="no">
                 center
             </iframe>
         </div>
     </div>
-</div>
-<div class="container">
+
     <div id="app">
         {{ message }} {{1+2}}
         <input type="button" value="button" @click="say"/>
@@ -65,16 +78,6 @@
         });
 
     </script>
-    <div>
-        navbar
-        <p><a href="examples/navbar/navbar1.html">响应式边栏导航</a></p>
-        <p><a href="examples/navbar/navbar2.html">导航下拉菜单</a></p>
-    </div>
-    <div class="container">
-        <p><a href="bootstrap/newsweb/index.html">新闻站点示例</a></p>
-    </div>
-    bootstrap<br>
-    <a href="bootstrap/demo1/index.html"> demo1 </a>
 </div>
 </body>
 
