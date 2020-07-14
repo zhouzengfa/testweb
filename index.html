@@ -13,72 +13,88 @@
     <script type="text/javascript" src="js/vue.js" charset="utf-8"></script>
 
     <link href="style/bootstrap.min.css" type="text/css" rel="stylesheet">
-    <link rel="stylesheet" href="style/style.css" >
+    <link rel="stylesheet" href="style/style.css">
 </head>
 
 <body>
-<div class="navbar navbar-default">
+<div id="app">
+    <div class="navbar navbar-default">
+        <div class="container">
+            <ul class="nav navbar-nav">
+                <li><a href="#" @click="handleNavClick('bootstrap')">bootstrap</a></li>
+                <li><a href="#" @click="handleNavClick('css')">css</a></li>
+            </ul>
+        </div>
+    </div>
     <div class="container">
-        <ul class="nav navbar-nav">
-            <li><a href="#">bootstrap</a></li>
-        </ul>
-    </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col-xs-2 left-column">
-            <div id="left-menu" class="list-group">
-                <a v-for="item in list" v-bind:class="{'list-group-item':true, 'disabled':item.disable}"
-                    :href="item.url" :target="item.target != null ? item.target : 'inframe'">{{item.name}}</a>
-<!--                <a v-for="item in list" v-bind:class="['list-group-item', item.disable ? 'disabled' :'']" :href="item.url" :target="item.disable ?'': 'inframe'">{{item.name}}</a>-->
+        <div class="row">
+            <div class="col-xs-2 left-column">
+                <div class="list-group">
+                    <!--                <a v-for="item in list" v-bind:class="{'list-group-item':true, 'disabled':item.disable}"-->
+                    <!--                    :href="item.url" :target="item.target != null ? item.target : 'inframe'">{{item.name}}</a>-->
+                    <a v-for="item in list[curselect]" v-bind:class="['list-group-item', item.disable ? 'disabled' :'']"
+                       :href="item.url" :target="item.target != null ? item.target : 'inframe'">{{item.name}}</a>
+                </div>
+
             </div>
-            <script type="text/javascript">
-                new Vue({
-                    el: '#left-menu',
-                    data: {
-                        list: [
-                            {name: "bootstrap", url: '#', disable: true, target: ''},
-                            {name: "新闻站点", url: 'bootstrap/newsweb/index.html'},
-                            {name: "响应式边栏导航", url:'examples/navbar/navbar1.html', target:'_blank'},
-                            {name: "导航下拉菜单", url:'examples/navbar/navbar2.html'},
-                            {name: "demo1", url:'bootstrap/demo1/index.html'},
-                        ],
-                    }
-                });
-            </script>
+            <div class="col-xs-10 center-column">
+                <iframe name="inframe" src="" frameborder="0" scrolling="no">
+                    center
+                </iframe>
+            </div>
         </div>
-        <div class="col-xs-10 center-column">
-            <iframe name="inframe" src="" frameborder="0" scrolling="no">
-                center
-            </iframe>
-        </div>
-    </div>
 
-    <div id="app">
-        {{ message }} {{1+2}}
-        <input type="button" value="button" @click="say"/>
-        <div v-text="message"></div>
-    </div>
-    <script type="text/javascript">
-        const app = new Vue({
-            el: "#app",
-            data: {
-                message: 'Hello Vue!',
-                count: 1,
-            },
-            methods: {
-                say: function (event) {
-                    if (this.count % 2 === 0)
-                        this.message = this.count + '这是偶数'
-                    else
-                        this.message = this.count + "这是奇数"
-                    this.count++;
-                }
-            }
-        });
+<!--        <div id="app">-->
+<!--            {{ message }} {{1+2}}-->
+<!--            <input type="button" value="button" @click="say"/>-->
+<!--            <div v-text="message"></div>-->
+<!--        </div>-->
+<!--        <script type="text/javascript">-->
+<!--            const app = new Vue({-->
+<!--                el: "#app",-->
+<!--                data: {-->
+<!--                    message: 'Hello Vue!',-->
+<!--                    count: 1,-->
+<!--                },-->
+<!--                methods: {-->
+<!--                    say: function (event) {-->
+<!--                        if (this.count % 2 === 0)-->
+<!--                            this.message = this.count + '这是偶数'-->
+<!--                        else-->
+<!--                            this.message = this.count + "这是奇数"-->
+<!--                        this.count++;-->
+<!--                    }-->
+<!--                }-->
+<!--            });-->
 
-    </script>
+<!--        </script>-->
+    </div>
 </div>
+<script type="text/javascript">
+    new Vue({
+        el: '#app',
+        data: {
+            curselect: 'bootstrap',
+            list: {
+                bootstrap: [
+                    {name: "bootstrap", url: '#', disable: true, target: ''},
+                    {name: "新闻站点", url: 'bootstrap/newsweb/index.html'},
+                    {name: "demo0", url: 'bootstrap/demo1/index.html'},
+                ],
+                css: [
+                    {name: "css示例", url: '#', disable: true, target: ''},
+                    {name: "响应式边栏导航", url: 'examples/navbar/navbar1.html', target: '_blank'},
+                    {name: "导航下拉菜单", url: 'examples/navbar/navbar2.html'},
+                ]
+            }
+        },
+        methods:{
+            handleNavClick: function (selected) {
+                this.curselect=selected;
+            }
+        }
+    });
+</script>
 </body>
 
 </html>
