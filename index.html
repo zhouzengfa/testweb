@@ -21,14 +21,14 @@
     <div class="navbar navbar-default">
         <div class="container">
             <ul class="nav navbar-nav">
-                <li><a href="#" @click="handleNavClick('bootstrap')">bootstrap</a></li>
-                <li><a href="#" @click="handleNavClick('css')">css</a></li>
+                <li v-for="item in navitems"><a href="#" v-on:click="handleNavClick(item.param)">{{item.name}}</a></li>
             </ul>
         </div>
+
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-xs-2 left-column">
+            <div class="col-xs-3 left-column">
                 <div class="list-group">
                     <!--                <a v-for="item in list" v-bind:class="{'list-group-item':true, 'disabled':item.disable}"-->
                     <!--                    :href="item.url" :target="item.target != null ? item.target : 'inframe'">{{item.name}}</a>-->
@@ -37,7 +37,7 @@
                 </div>
 
             </div>
-            <div class="col-xs-10 center-column">
+            <div class="col-xs-9 center-column">
                 <iframe name="inframe" src="" frameborder="0" scrolling="no">
                     center
                 </iframe>
@@ -71,7 +71,7 @@
     </div>
 </div>
 <script type="text/javascript">
-    new Vue({
+    const v2=new Vue({
         el: '#app',
         data: {
             curselect: 'bootstrap',
@@ -86,11 +86,16 @@
                     {name: "响应式边栏导航", url: 'examples/navbar/navbar1.html', target: '_blank'},
                     {name: "导航下拉菜单", url: 'examples/navbar/navbar2.html'},
                 ]
-            }
+            },
+            navitems:[
+                {name:'bootstrap', param:'bootstrap'},
+                {name:'css', param:'css'},
+            ]
         },
         methods:{
             handleNavClick: function (selected) {
                 this.curselect=selected;
+                console.log('select nav:' + selected)
             }
         }
     });
