@@ -21,7 +21,7 @@
     <div class="navbar navbar-default">
         <div class="container">
             <ul class="nav navbar-nav">
-                <li v-for="item in navitems"><a href="#" v-on:click="handleNavClick(item.param)">{{item.name}}</a></li>
+                <li v-for="item in navitems"><a href="javascript:void(0)" v-on:click="handleNavClick(item.param)">{{item.name}}</a></li>
             </ul>
         </div>
 
@@ -33,7 +33,7 @@
                     <!--                <a v-for="item in list" v-bind:class="{'list-group-item':true, 'disabled':item.disable}"-->
                     <!--                    :href="item.url" :target="item.target != null ? item.target : 'inframe'">{{item.name}}</a>-->
                     <a v-for="item in list[curselect]" v-bind:class="['list-group-item', item.disable ? 'disabled' :'']"
-                       :href="item.url" :target="item.target != null ? item.target : 'inframe'">{{item.name}}</a>
+                       :href="item.url.length == 0?'javascript:void(0)' : item.url" :target="item.target != null ? item.target : 'inframe'">{{item.name}}</a>
                 </div>
 
             </div>
@@ -77,12 +77,12 @@
             curselect: 'bootstrap',
             list: {
                 bootstrap: [
-                    {name: "bootstrap", url: '#', disable: true, target: ''},
+                    {name: "bootstrap", url: '', disable: true, target: ''},
                     {name: "新闻站点", url: 'bootstrap/newsweb/index.html'},
                     {name: "demo0", url: 'bootstrap/demo1/index.html'},
                 ],
                 css: [
-                    {name: "css示例", url: '#', disable: true, target: ''},
+                    {name: "css示例", url: '', disable: true, target: ''},
                     {name: "响应式边栏导航", url: 'examples/navbar/navbar1.html', target: '_blank'},
                     {name: "导航下拉菜单", url: 'examples/navbar/navbar2.html'},
                 ]
