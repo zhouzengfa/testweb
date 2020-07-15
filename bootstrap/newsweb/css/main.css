@@ -10,7 +10,7 @@
 }
 
 #right{
-    background-color: aliceblue;
+    /*background-color: aliceblue;*/
 }
 
 .navbar-brand{
@@ -78,4 +78,42 @@ img{
 .info{
     margin-top: 5px;
     display: inline-block;
+}
+#search{
+    margin-bottom: 20px;
+}
+.side-card{
+    background: rgba(0,0,0,.05);
+    margin: 15px 0px;
+    padding: 10px 0px;
+    border-radius: 3px;
+}
+.side-card .jubao{
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 150%;
+    margin-left: -15px;
+}
+.side-card .jubao-tel{
+    font-size: 2px;
+    margin-left: -15px;
+}
+.side-card .header{
+    padding: 0px 15px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.side-card .item{
+    #margin: 10px 0px;
+    padding: 10px 15px;
+}
+.side-card .item:hover{
+    background: rgba(0,0,0,.05);
+}
+.side-card .item .brief{
+    margin-bottom: 5px;
+    line-height: 1.6em;
+}
+.side-card .item .desc{
+    color: #999999;
 }
