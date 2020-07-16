@@ -3,16 +3,34 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/bootstrap.min.css">
+    <style>
+        [id1~=dest]{
+            display: none;
+        }
+        #input-test{
+            display: none;
+        }
+        #input-test:checked ~[id1~=dest]{
+            display: block;
+        }
+        .dest-test{
+            display: none;
+        }
+
+    </style>
 </head>
 
 <body>
-<button type="button" class="btn btn-default" >
-    <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>xx
-</button>
+<div class="hidden-xs">hidden in xs</div>
+<div  class="container visible-xs-block">
+    <label for="input-test">test</label>
+    <input type="checkbox" id="input-test">
+    <div class="dest-test">xxxxxxxxxxxxxxxxx</div>
+    <div class="dest-test">zzzzzzzzzz</div>
+    <div id1="dest">yyyyyyy</div>
+</div>
 
-<button type="button" class="btn btn-default btn-lg">
-    <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Star
-</button>
-
+<div class="dest-test visible-xs-block">22222222</div>
 </body>
 </html>
