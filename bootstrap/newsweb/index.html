@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!--    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
+    <!--    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>新闻网站</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -16,32 +16,36 @@
         <div class="navbar-header">
             <a href="index.html" class="navbar-brand"></a>
         </div>
-        <!--        <div class="hidden-xs">-->
-        <ul class="nav navbar-nav">
-            <li><a href="#">国际</a></li>
-            <li><a href="#">国内</a></li>
-            <li><a href="#">数读</a></li>
-            <li><a href="#">社会</a></li>
-        </ul>
-        <!--        </div>-->
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">登陆</a></li>
-            <li><a href="#">注册</a></li>
-        </ul>
+        <label id="toggle-menu" for="toggle-menu-checkbox" class="visible-xs">MENU</label>
+        <input id ="toggle-menu-checkbox" type="checkbox" class="hidden">
+        <div class="hidden-xs">
+            <ul class="nav navbar-nav ">
+                <li><a href="#">国际</a></li>
+                <li><a href="#">国内</a></li>
+                <li><a href="#">数读</a></li>
+                <li><a href="#">社会</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">登陆</a></li>
+                <li><a href="#">注册</a></li>
+            </ul>
+        </div>
     </div>
 </div>
 
 <div id="main" class="container">
     <div id="left" class="col-sm-2">
-        <div class="list-group">
-            <a class="list-group-item active" href="#">全部</a>
-            <a class="list-group-item" href="#">电影</a>
-            <a class="list-group-item" href="#">电视剧</a>
-            <a class="list-group-item" href="#">明星</a>
-            <a class="list-group-item" href="#">八卦</a>
-            <a class="list-group-item" href="#">音乐</a>
-            <a class="list-group-item" href="#">演员</a>
-            <a class="list-group-item" href="#">歌手</a>
+        <div class="hidden-xs">
+            <div class="list-group ">
+                <a class="list-group-item active" href="#">全部</a>
+                <a class="list-group-item" href="#">电影</a>
+                <a class="list-group-item" href="#">电视剧</a>
+                <a class="list-group-item" href="#">明星</a>
+                <a class="list-group-item" href="#">八卦</a>
+                <a class="list-group-item" href="#">音乐</a>
+                <a class="list-group-item" href="#">演员</a>
+                <a class="list-group-item" href="#">歌手</a>
+            </div>
         </div>
     </div>
     <div id="center" class="col-sm-7">

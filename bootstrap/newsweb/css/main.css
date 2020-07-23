@@ -117,3 +117,19 @@ img{
 .side-card .item .desc{
     color: #999999;
 }
+.navbar-header{
+    display: inline-block;
+}
+#toggle-menu{
+    display: none;
+    float: right;
+    color: #666;
+    margin-top: 15px;
+    margin-right: 15px;
+}
+#toggle-menu:hover{
+    color:#333;
+}
+#toggle-menu-checkbox:checked ~div{
+    display: block !important;
+}
